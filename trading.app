@@ -77,7 +77,7 @@ def detect_order_blocks(df):
 if st.sidebar.button("Generate Chart"):
     with st.spinner("Fetching data..."):
         try:
-            binance = ccxt.binance()
+            binance = ccxt.kucoin()
             bars = binance.fetch_ohlcv('BTC/USDT', timeframe=selected_binance_tf, limit=num_candles)
             df = pd.DataFrame(bars, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
 
